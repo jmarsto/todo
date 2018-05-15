@@ -39,6 +39,7 @@ h1 a {
 .navright:hover {
   box-shadow: 0px 0px 20px -3px #70a0ff inset;
   border-radius: 50px;
+  color: white;
 }
 
 #menu {
@@ -55,6 +56,11 @@ h1 a {
   height: 5px;
   margin: 5px;
   display: block;
+  transition: .2s;
+}
+
+.menubars:hover .menubar {
+  background-color: white;
 }
 
 #menu:hover {
@@ -71,10 +77,12 @@ h1 a {
 #masterInput {
   background-color: #6d96e8;
   box-shadow: 3px 5px 15px #3a4864;
-  width: 50%;
+  height: 45px;
+  width: 50vw;
   margin-left: 25vw;
   margin-top: 5vh;
   border-radius: 5px;
+  text-align: right
 }
 
 #inputField {
@@ -87,11 +95,19 @@ h1 a {
   padding-left: 5px;
   background-color: #f1f4f9;
   height: 20px;
-  transition: .4s
+  transition: .4s;
+  float:left;
+  -webkit-transition: .4s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 #inputField:hover {
-  background-color: #fff
+  background-color: #fff;
+}
+
+#inputField:focus {
+  background-color: #fff;
+  width: 79%;
 }
 
 #add {
@@ -101,7 +117,7 @@ h1 a {
   padding: 5px;
   font-size: 12px;
   height: 30px;
-  margin-left: 10px;
+  margin: 8px;
   cursor: default;
   transition: .4s;
 }
@@ -123,6 +139,7 @@ h1 a {
   background-color: #2f5fc1;
   border-radius: 5px;
   padding: 10px;
+  font-size: 28px;
   box-shadow: 3px 5px 15px #3a4864;
   color: #d7e2f9;
   width: 33%;
@@ -130,15 +147,34 @@ h1 a {
   display: inline-block;
 }
 
+#slate ul:hover {
+  color: white;
+}
+
 .close {
   position: absolute;
   right: 0;
   top: 0;
+  font-size: 16px;
   padding: 10px 12px;
   transition: .2s
 }
 
 .close:hover {
+  color: #f1f4f9;
+  cursor: pointer;
+  box-shadow: 0px 0px 40px -15px #70a0ff inset;
+  border-radius: 50px;
+}
+
+.addition {
+  display: block;
+  font-size: 16px;
+  margin-left: 5px;
+  transition: .2s;
+}
+
+.addition:hover {
   color: #f1f4f9;
   cursor: pointer;
   box-shadow: 0px 0px 40px -15px #70a0ff inset;
