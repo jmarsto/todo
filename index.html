@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>
+      <nav>
+        <a href="#" id="menu">
+          <div id="menubar1" class="menubar"></div>
+          <div id="menubar2" class="menubar"></div>
+          <div id="menubar3" class="menubar"></div>
+        </a>
+        <a href="#" id="?" class="navright">
+          ?
+        </a>
+      </nav>
+    </h1>
+    <div id="slate">
+      <div id="masterInput">
+        <input type="text" id="inputField"  placeholder="New list...">
+        <button onclick="newList()" type="button" id="add">Add</button>
+      </div>
+    </div>
+    <script src="lists.js" defer></script>
+    <script src="drag.js" defer></script>
+  </body>
+</html>
