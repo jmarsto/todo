@@ -11,6 +11,8 @@ I'll be trying to build a to-do app, incorporating:
 
 - animated hovers
 
+
+
 Goals:
 
 - learn how to incorporate the above,
