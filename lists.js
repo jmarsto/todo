@@ -31,13 +31,32 @@ function newList() {
     var furtherButton = document.createTextNode("+");
     further.appendChild(furtherButton)
     further.className = "addition";
-    further.onclick = function() {
-      alert("add functionality")
+    further.onclick = function newInput() {
+      var newinput = document.createElement("INPUT")
+      newinput.type="text"
+      newinput.placeholder="enter to submit"
+      newinput.className = "additionalInput"
+      newinput.id = "newIn"
+      newinput.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+          submitNewInput()
+        }
+      });
+      further.parentElement.appendChild(newinput)
+      newinput.focus()
+      further.parentElement.removeChild(further)
     }
+
+
     document.getElementById(inputValue).appendChild(further)
-    //lastly, we leave the option to click to add items to the list 
+    //lastly, we leave the option to click to add items to the list
+    //// // IDEA: when the further span is clicked, let's REPLACE it with the
+    // newinput field, indented.  and then when you click away or press enter,
+    // submit field and return the further span
   }
 }
+
 
 inputField.addEventListener("keyup", function(event) {
   event.preventDefault();
@@ -46,3 +65,52 @@ inputField.addEventListener("keyup", function(event) {
   }
 });
 //enter will also work in the inputField
+
+function submitNewInput() {
+  var li = document.createElement("li");
+  var newInputValue = document.getElementById("newIn").value;
+  var newText = document.createTextNode(newInputValue);
+  var liHeader = document.createElement("SPAN")
+  liHeader.appendChild(newText)
+  liHeader.className = "liHeader"
+  var openBox = document.createTextNode("\u2610")
+  var openBoxSpan = document.createElement("SPAN")
+  openBoxSpan.appendChild(openBox)
+  openBoxSpan.className = "openBoxSpan"
+  openBoxSpan.onclick = function clickbox() {
+      openBoxSpan.innerText = "\u2611"
+      openBoxSpan.parentElement.className = "checked"
+  }
+  if (document.getElementById("newIn").value == '') {
+//not doing anything
+  }
+  else {
+    //create list item
+    li.appendChild(openBoxSpan);
+    li.appendChild(liHeader);
+    li.id = newInputValue
+    document.getElementById("newIn").parentElement.appendChild(li)
+    var further = document.createElement("SPAN");
+    var furtherButton = document.createTextNode("+");
+    further.appendChild(furtherButton)
+    further.className = "addition";
+    further.onclick = function newInput() {
+      var newinput = document.createElement("INPUT")
+      newinput.type="text"
+      newinput.placeholder="enter to submit"
+      newinput.className = "additionalInput"
+      newinput.id = "newIn"
+      newinput.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+          submitNewInput()
+        }
+      });
+      further.parentElement.appendChild(newinput)
+      further.parentElement.removeChild(further)
+      newinput.focus()
+    }
+    document.getElementById("newIn").parentElement.appendChild(further)
+    document.getElementById("newIn").parentElement.removeChild(newIn);
+  }
+}
