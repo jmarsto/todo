@@ -148,7 +148,7 @@ h1 a {
 }
 
 #slate ul:hover {
-  color: ;
+  background-color: #3164c9;
 }
 
 #slate .ulHeader {
@@ -191,6 +191,7 @@ input.additionalInput {
   display: block;
   width: 80%;
   margin: 5px 2px;
+  font-size: 16px
 }
 
 .liHeader {
@@ -200,7 +201,7 @@ input.additionalInput {
 
 ul li {
   list-style: none;
-  font-size: 20px;
+  font-size: 19px;
 }
 
 ul li:hover {
@@ -210,8 +211,25 @@ ul li:hover {
 .openBoxSpan {
   font-size: 20px;
   padding-right: 5px;
+  cursor: pointer;
 }
 
 .checked :nth-child(2) {
   text-decoration: line-through;
+  font-size: 16px;
+  color: #c1d2f6
+}
+
+#closebuttonid {
+  float: right;
+  padding: 0 1px;
+  font-size: 16px;
+  transition: .2s;
+  color: #d7e2f9
+}
+
+#closebuttonid:hover {
+  color: #ff7961;
+  cursor: pointer;
+  border-radius: 50px;
 }
